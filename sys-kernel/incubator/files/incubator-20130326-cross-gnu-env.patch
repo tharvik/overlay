@@ -1,0 +1,14 @@
+--- cross-gnu-env	2013-03-26 23:24:08.640000000 +0100
++++ incubator-20130326-cross-gnu-env.patch.sh	2013-03-26 23:27:24.944000000 +0100
+@@ -117,10 +117,7 @@
+ 
+ prj_x2 prj_set PATH "$ROOT"/bin:"$PATH" &&
+ 
+-if gmake --version 2> /dev/null | grep -q GNU
+-then prj_x2 prj_set MAKE gmake
+-else prj_x2 prj_set MAKE make
+-fi
++prj_x2 prj_set MAKE emake
+ 
+ # See GNU Mach's `Makefile.am' for why.  This is for the packages that don't
+ # handle it themselves.
