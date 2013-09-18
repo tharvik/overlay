@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+	<repo quality="experimental" status="unofficial">
+		<name>tharvik</name>
+		<description>Local patchs</description>
+		<homepage>https://github.com/tharvik/portage-overlay</homepage>
+		<owner type="project">
+			<email>tharvik@gmail.com</email>
+			<name>tharvik</name>
+		</owner>
+		<source type="git">https://github.com/tharvik/portage-overlay.git</source>
+	</repo>
+</repositories>
