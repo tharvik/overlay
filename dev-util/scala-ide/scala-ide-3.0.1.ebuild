@@ -16,9 +16,16 @@ IUSE=""
 DEPEND="virtual/jre"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+
+	default_src_unpack
+	mkdir "${S}"
+	mv "${WORKDIR}"/eclipse/* "${S}"
+}
+
 src_install() {
 
 	dodir /usr/{bin,share/"${P}"}
-	cp "${S}"/* "${D}"/usr/share/"${P}"
+	cp -r "${S}"/* "${D}"/usr/share/"${P}"
 	dosym /usr/share/"${P}"/eclipse /usr/bin/eclipse
 }
