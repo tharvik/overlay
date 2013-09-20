@@ -12,9 +12,14 @@ SLOT="0"
 KEYWORDS="~amd64"
 DEPEND="virtual/jre"
 
-src_install() {
-	cp -r "${S}" "${D}"/opt/sbt
+src_unpack() {
+	default_src_unpack || die
+	mkdir "${S}"
+	mv "${WORKDIR}"/sbt/* "${S}"
+}
 
-	dodir /opt/{bin,sbt}
-	dosym /opt/sbt/bin/sbt /opt/bin/sbt
+src_install() {
+	dodir /usr/share/"${PF}" /bin
+	cp -r "${S}"/* "${D}"/usr/share/"${PF}"
+	dosym /usr/share/"${PF}"/bin/sbt /bin/sbt
 }
