@@ -4,7 +4,7 @@
 
 EAPI=5
 inherit eutils
-DESCRIPTION="sbt"
+DESCRIPTION="sbt, the scala build tool"
 HOMEPAGE="http://scalasbt.artifactoryonline.com/"
 SRC_URI="http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz"
 LICENSE="Apache-2.0"
