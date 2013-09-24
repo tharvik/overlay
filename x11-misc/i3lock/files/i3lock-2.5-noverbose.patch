@@ -1,30 +1,5 @@
 diff -Naur i3lock-2.5/unlock_indicator.c i3lock-2.5-new/unlock_indicator.c
 --- i3lock-2.5/unlock_indicator.c	2013-06-09 11:49:00.000000000 +0200
-+++ i3lock-2.5-new/unlock_indicator.c	2013-09-24 10:45:39.782759540 +0200
-@@ -162,20 +162,7 @@
- 
-         cairo_set_line_width(ctx, 10.0);
- 
--        /* Display a (centered) text of the current PAM state. */
--        char *text = NULL;
--        switch (pam_state) {
--            case STATE_PAM_VERIFY:
--                text = "verifying…";
--                break;
--            case STATE_PAM_WRONG:
--                text = "wrong!";
--                break;
--            default:
--                break;
--        }
--
--        if (text) {
-+        if (pam_state == STATE_PAM_VERIFY || paw_state = STATE_PAM_WRONG) {
-             cairo_text_extents_t extents;
-             double x, y;
- 
-diff -Naur i3lock-2.5/unlock_indicator.c i3lock-2.5-new/unlock_indicator.c
---- i3lock-2.5/unlock_indicator.c	2013-06-09 11:49:00.000000000 +0200
 +++ i3lock-2.5-new/unlock_indicator.c	2013-09-24 11:27:59.956003004 +0200
 @@ -162,20 +162,7 @@
  
