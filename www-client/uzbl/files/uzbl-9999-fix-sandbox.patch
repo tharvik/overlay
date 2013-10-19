@@ -1,0 +1,12 @@
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2013-10-19 18:45:14.767161438 +0200
++++ b/Makefile	2013-10-19 18:46:19.203164681 +0200
+@@ -189,7 +189,7 @@
+ 	install -m755 uzbl-core $(INSTALLDIR)/bin/uzbl-core
+ 
+ install-event-manager: install-dirs
+-	$(PYTHON) setup.py install --prefix=$(PREFIX) --install-scripts=$(INSTALLDIR)/bin $(PYINSTALL_EXTRA)
++	$(PYTHON) setup.py install --prefix=$(DESTDIR)/$(PREFIX) --install-scripts=$(INSTALLDIR)/bin $(PYINSTALL_EXTRA)
+ 
+ install-uzbl-browser: install-dirs install-uzbl-core install-event-manager
+ 	sed 's#^PREFIX=.*#PREFIX=$(RUN_PREFIX)#' < bin/uzbl-browser > $(INSTALLDIR)/bin/uzbl-browser

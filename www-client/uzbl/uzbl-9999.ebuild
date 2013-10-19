@@ -100,6 +100,9 @@ src_prepare() {
 	# make gtk3 configurable
 	sed -r "s:^(USE_GTK3) = (.*):\1?=\2:" -i Makefile ||
 		die "Makefile sed for gtk3 failed"
+	
+	# patch
+	epatch "${FILESDIR}/${P}-fix-sandbox.patch"
 }
 
 src_compile() {
@@ -111,9 +114,7 @@ src_install() {
 	use browser && targets="${targets} install-uzbl-browser"
 	use browser && use tabbed && targets="${targets} install-uzbl-tabbed"
 
-	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
-
-	echo ">>>>"
+	emake DESTDIR="${D}" PREFIX="/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
 
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/ftdetect
