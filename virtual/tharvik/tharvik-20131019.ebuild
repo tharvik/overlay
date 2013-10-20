@@ -11,11 +11,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="|| (
+RDEPEND="
 		app-vim/scala-syntax
 		dev-java/sbt
 		dev-util/scala-ide
 		www-client/uzbl
 		x11-misc/i3lock
-	)"
+	"
 DEPEND=""
