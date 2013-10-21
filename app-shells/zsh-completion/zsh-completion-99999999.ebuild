@@ -19,7 +19,7 @@ RDEPEND=">=app-shells/zsh-4.3.5"
 src_configure() {
 	default_src_configure
 
-	cp "${FILEDIR}/${P}-add-rc.patch"
+	cp "${FILESDIR}/${PN}-add-rc-service.patch" "${S}/_rc-service" || die 'Unable to copy rc-service patch'
 }
 
 src_install() {
