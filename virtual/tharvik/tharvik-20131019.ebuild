@@ -12,6 +12,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
+		app-shells/zsh-completion
 		app-vim/scala-syntax
 		dev-java/sbt
 		dev-util/scala-ide
