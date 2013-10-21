@@ -1,0 +1,21 @@
+#compdef rc-service
+
+local actions_args actions _services
+#_layman_remote_overlays() {
+#	local layman_list_overlays
+#	layman_list_overlays=(${(S)${${(f)"$(layman -k -N -L 2>/dev/null)"}//\[*}#\* })
+#	compadd "$@" ${(kv)=layman_list_overlays} "ALL"
+#}
+_services() {
+	local services
+	#layman_list_overlays=(${(S)${${(f)"$(layman -N -l)"}//\[*}#\* })
+	services=(rc-service -l)
+	compadd "$@" ${(kv)=services}
+}
+actions=(
+	"(--ifexists -i)"{--ifexists -i}'[Run script on if it exist]:service:_services'
+	"(--exists -e)"{--exists -e}'[Return zero if the given service exist]:service:_services'
+	"(--list -l)"{--list -l}'[List all available services]'
+	"(--resolve -r)"{--resolve -r}'[Return the full path of a service]:service:_services'
+)
+_arguments $actions[@]
