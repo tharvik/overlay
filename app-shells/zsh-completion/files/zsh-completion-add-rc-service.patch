@@ -1,0 +1,15 @@
+#compdef rc-service
+
+local actions_args actions _services
+_services() {
+	local services
+	services=($(rc-service -l))
+	compadd "$@" ${(kv)=services}
+}
+actions=(
+	"(--ifexists -i)"{--ifexists,-i}'[Run script only if it exist]:service:_services'
+	"(--exists -e)"{--exists,-e}'[Return zero if the given service exist]:service:_services'
+	"(--list -l)"{--list,-l}'[List all available services]'
+	"(--resolve -r)"{--resolve,-r}'[Return the full path of a service]:service:_services'
+)
+_arguments $actions[@]
