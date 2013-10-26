@@ -19,24 +19,36 @@ DEPEND="virtual/jdk:1.6"
 RDEPEND="${DEPEND}
 		dev-java/ant-core"
 
-EANT_BUILD_TARGET="dist"
-TAR_SUFFIX="_20131025_9000"
+EANT_BUILD_TARGET="copyMain4Dist"
 
 src_unpack() {
-	default_src_unpack
+	default
 	mv "${WORKDIR}/yacy" "${S}" || die "Unable to rename downloaded archive"
 }
 
-#src_compile() {
-#	ANT_TASKS="dist" eant package || die "Unable to compile"
-#}
+src_configure() {
+	default
+
+	# patch to have the pidfile for rc-service
+	epatch "${FILESDIR}/${P}-rc-service-pid.patch"
+}
 
 src_install() {
-	dodir "/usr/share/${P}" "/usr/bin"
-	insinto "/usr/share/${P}"
-	cd "${T}"
-	tar xvf "${S}/RELEASE/yacy_v${PV}${TAR_SUFFIX}.tar.gz" || die "Unable to unpack compiled archive"
-	mv "${T}/yacy/"* "${D}/usr/share/${P}" || die "Unable to move compiled files to temporary install directory"
-	dosym "/usr/share/${P}/startYACY.sh" "/usr/bin/yacy-start"
-	dosym "/usr/share/${P}/stopYACY.sh" "/usr/bin/yacy-stop" 
+	default
+
+	insopts -o yacy -g yacy
+	dodir "/usr/share/${P}" &&
+	chmod +x "${S}/RELEASE/MAIN/"{,bin/,addon/}*.sh &&
+	mv "${S}/RELEASE/MAIN/"* "${D}/usr/share/${P}" ||
+		die "Unable to move compiled files to temporary install directory"
+
+	# add rc-service
+	newinitd "${FILESDIR}/${P}-rc-service" "yacy" || die "Unable to install the rc-service"
+}
+
+pkg_postinst() {
+
+	# add user and group for rc-service
+	enewgroup yacy
+	enewuser yacy -1 -1 -1 yacy
 }

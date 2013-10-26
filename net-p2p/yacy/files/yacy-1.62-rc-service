@@ -3,19 +3,24 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+VERSION="1.62"
+YACY_PATH="/usr/share/yacy-${VERSION}"
+PIDFILE="${YACY_PATH}/yacy.pid"
+
 depend() {
 	need net
 }
 
 start() {
 	ebegin "Starting yacy"
-	start-stop-daemon --start --quiet --user yacy --exec /usr/bin/yacy-start #--pidfile "${PIDFILE}" \
-		#-- --pidfile "${PIDFILE}" --user privoxy.privoxy "${CONFFILE}" #2>/dev/null
+	start-stop-daemon --start --user yacy:yacy --exec "${YACY_PATH}/startYACY.sh" \
+		--pidfile "${PIDFILE}"
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping yacy"
-	start-stop-daemon --stop --quiet #--pidfile "${PIDFILE}"
+	start-stop-daemon --stop --quiet --exec "${YACY_PATH}/stopYACY.sh" \
+		--pidfile "${PIDFILE}"
 	eend $?
 }
