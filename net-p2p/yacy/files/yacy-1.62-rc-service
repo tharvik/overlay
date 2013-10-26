@@ -1,0 +1,21 @@
+#!/sbin/runscript
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting yacy"
+	start-stop-daemon --start --quiet --user yacy --exec /usr/bin/yacy-start #--pidfile "${PIDFILE}" \
+		#-- --pidfile "${PIDFILE}" --user privoxy.privoxy "${CONFFILE}" #2>/dev/null
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping yacy"
+	start-stop-daemon --stop --quiet #--pidfile "${PIDFILE}"
+	eend $?
+}
