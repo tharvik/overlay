@@ -13,14 +13,14 @@ depend() {
 
 start() {
 	ebegin "Starting yacy"
-	start-stop-daemon --start --user yacy:yacy --exec "${YACY_PATH}/startYACY.sh" \
+	start-stop-daemon --start --quiet --user yacy:yacy --exec "${YACY_PATH}/startYACY.sh" \
 		--pidfile "${PIDFILE}"
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping yacy"
-	start-stop-daemon --stop --quiet --exec "${YACY_PATH}/stopYACY.sh" \
+	start-stop-daemon --stop --quiet --user yacy:yacy --exec "${YACY_PATH}/stopYACY.sh" \
 		--pidfile "${PIDFILE}"
 	eend $?
 }
