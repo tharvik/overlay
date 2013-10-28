@@ -13,7 +13,7 @@ SRC_URI="http://i3wm.org/${PN}/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 ~x86"
-IUSE=""
+IUSE="text"
 
 RDEPEND="virtual/pam
 	dev-libs/libev
@@ -34,8 +34,7 @@ src_prepare() {
 	sed -i -e 's:login:system-auth:' ${PN}.pam || die
 
 	# patch which remove text
-	epatch "${FILESDIR}/${P}-noverbose.patch"
-
+	use text || epatch "${FILESDIR}/${P}-noverbose.patch"
 }
 
 src_install() {

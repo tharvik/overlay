@@ -6,4 +6,7 @@
 		<email>xarthisius@gentoo.org</email>
 		<name>Kacper Kowalik</name>
 	</maintainer>
+	<use>
+		<flag name="text">Add text feedback when checking for the password</flag>
+	</use>
 </pkgmetadata>
