@@ -4,28 +4,30 @@
 
 EAPI=5
 
-DESCRIPTION="The Scala IDE bundle to run eclipse with tools for scala"
+inherit git-2
+
+DESCRIPTION="The Scala IDE to build eclipse with tools for scala"
 HOMEPAGE="http://scala-ide.org"
-SRC_URI="http://download.scala-ide.org/sdk/e37/scala210/stable/update-site.zip"
+SRC_URI=""
+EGIT_REPO_URI="git://github.com/scala-ide/scala-ide.git"
 
 LICENSE="Scala"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="virtual/jre"
 RDEPEND="${DEPEND}
 		dev-java/maven-bin:3.0"
 
-src_unpack() {
-
-	default_src_unpack
-	mkdir "${S}"
-	mv "${WORKDIR}"/eclipse/* "${S}"
+src_compile(){
+	cd "${S}"
+	./build-all
 }
 
 src_install() {
 
+	die "not yet implemented"
 	dodir /usr/{bin,share/"${P}"}
 	cp -r "${S}"/* "${D}"/usr/share/"${P}"
 	dosym /usr/share/"${P}"/eclipse /usr/bin/eclipse
