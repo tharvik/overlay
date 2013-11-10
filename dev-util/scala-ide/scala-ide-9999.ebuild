@@ -21,7 +21,6 @@ RDEPEND="${DEPEND}
 		dev-java/maven-bin:3.0"
 
 src_compile(){
-	cd "${S}"
 	./build-all
 }
 
