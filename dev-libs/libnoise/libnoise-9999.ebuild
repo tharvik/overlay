@@ -4,21 +4,22 @@
 
 EAPI=5
 
+inherit git-2 cmake-utils
+
 DESCRIPTION="A portable, open-source, coherent noise-generating library for C++"
 HOMEPAGE="http://libnoise.sourceforge.net/"
-SRC_URI="http://prdownloads.sourceforge.net/libnoise/libnoisesrc-1.0.0.zip"
+EGIT_REPO_URI=${EGIT_REPO_URI:-"https://github.com/qknight/libnoise.git"}
+SRC_URI=""
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dodir /usr/local/{include/noise,lib}
-	cp -r include "${D}/usr/local/include/noise"
-	cp -r lib/* "${D}/usr/local/lib"
-	dosym /usr/local/lib/libnoise.so{.0,}
+	cmake-utils_src_install
+	dosym /usr/include/noise /usr/include/libnoise
 }
