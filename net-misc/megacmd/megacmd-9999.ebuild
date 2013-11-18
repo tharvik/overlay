@@ -16,5 +16,17 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="net-libs/go-mega"
+DEPEND="dev-lang/go"
 RDEPEND="${DEPEND}"
+
+src_compile ()
+{
+	export GOPATH="${S}"
+	default_src_compile
+}
+
+src_install ()
+{
+	dodir /usr/local/bin
+	mv "${P}" "${D}"/usr/local/bin/megacmd
+}
