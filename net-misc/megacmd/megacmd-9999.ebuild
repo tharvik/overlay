@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-r3
+inherit git-2
 
 DESCRIPTION="A command-line client for mega.co.nz storage service"
 HOMEPAGE="https://github.com/t3rm1n4l/megacmd"
