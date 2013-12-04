@@ -15,5 +15,3 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-
-
