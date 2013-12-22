@@ -13,11 +13,7 @@ IUSE=""
 
 RDEPEND="
 		app-shells/zsh-completion
-		app-vim/scala-syntax
-		dev-java/sbt
 		dev-libs/girara
-		dev-libs/libnoise
-		dev-util/scala-ide
 		net-misc/megacmd
 		www-client/uzbl
 		x11-misc/i3lock
