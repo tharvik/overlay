@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install postinst prepare test unpack
+DEPEND=dev-qt/qtgui:4 dev-qt/qtsvg:4 bittorrent? ( >=net-libs/rb_libtorrent-0.14.5 >=dev-cpp/asio-1.1.0 dev-qt/qtwebkit:4 ) curl? ( >=net-misc/curl-7.18.2 ) doc? ( dev-qt/qthelp:4 ) jabber? ( net-libs/gloox ) webinterface? ( dev-qt/qtscript:4 ) nls? ( sys-devel/gettext ) sys-devel/make >=dev-util/cmake-2.8.9 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) dev-vcs/git
+DESCRIPTION=Qt4-based download/upload manager
+EAPI=5
+HOMEPAGE=http://fatrat.dolezel.info/
+IUSE=bittorrent +curl doc jabber nls webinterface
+LICENSE=GPL-2
+RDEPEND=dev-qt/qtgui:4 dev-qt/qtsvg:4 bittorrent? ( >=net-libs/rb_libtorrent-0.14.5 >=dev-cpp/asio-1.1.0 dev-qt/qtwebkit:4 ) curl? ( >=net-misc/curl-7.18.2 ) doc? ( dev-qt/qthelp:4 ) jabber? ( net-libs/gloox ) webinterface? ( dev-qt/qtscript:4 )
+SLOT=0
+_eclasses_=cmake-utils	412d9e2d2c6f85f46dad595e68570d21	eutils	025442f2eecab39ad0b4e541b6e142af	flag-o-matic	9a539029fe1d390c1828ff633baf26b5	git-2	2027b81a576527fa16bece425941e094	git-r3	0247fa26cde95080f65c2528bd1d4132	multilib	fac675dcccf94392371a6abee62d909f	toolchain-funcs	48b38a216afb92db6314d6c3187abea3
+_md5_=84a08f8a4e3da23d9864e57a206e9feb

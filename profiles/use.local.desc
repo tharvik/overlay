@@ -2,6 +2,8 @@
 # your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using egencache *
 
+net-misc/fatrat:bittorrent - Use the bittorrent protocol via net-libs/rb_libtorrent.
+net-misc/fatrat:webinterface - Enable builtin webinterface.
 www-client/uzbl:browser - Install the uzbl-browser script
 www-client/uzbl:experimental - Enable experimental branch
 www-client/uzbl:gtk3 - Use x11-libs/gtk+:3 instead of x11-libs/gtk+:2
