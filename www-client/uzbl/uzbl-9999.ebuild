@@ -12,8 +12,7 @@ if [[ ${PV} == *9999* ]]; then
 	SRC_URI=""
 	IUSE+=" experimental"
 	use experimental &&
-		EGIT_BRANCH="experimental" &&
-		EGIT_COMMIT="experimental"
+		EGIT_BRANCH="next"
 else
 	inherit vcs-snapshot
 	KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
@@ -41,7 +40,6 @@ COMMON_DEPEND="
 		net-libs/webkit-gtk:3
 		x11-libs/gtk+:3
 	)
-
 "
 
 DEPEND="
@@ -100,9 +98,12 @@ src_prepare() {
 	# make gtk3 configurable
 	sed -r "s:^(USE_GTK3) = (.*):\1?=\2:" -i Makefile ||
 		die "Makefile sed for gtk3 failed"
-
-	# patch
-	epatch "${FILESDIR}/${P}-fix-sandbox.patch"
+	
+	# fix sandbox
+	if ! use experimental; then
+		sed -i 's/prefix=$(PREFIX)/prefix=$(DESTDIR)\/$(PREFIX)/' Makefile ||
+			die "Makefile sed for sandbox failed"
+	fi
 }
 
 src_compile() {
@@ -114,7 +115,7 @@ src_install() {
 	use browser && targets="${targets} install-uzbl-browser"
 	use browser && use tabbed && targets="${targets} install-uzbl-tabbed"
 
-	emake DESTDIR="${D}" PREFIX="/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
+	emake -j1 DESTDIR="${D}" PREFIX="/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
 
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/ftdetect
@@ -123,5 +124,4 @@ src_install() {
 		insinto /usr/share/vim/vimfiles/syntax
 		doins "${S}"/extras/vim/syntax/uzbl.vim
 	fi
-
 }
