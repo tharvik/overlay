@@ -1,0 +1,9 @@
+# ChangeLog for media-gfx/mcomix
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*mcomix-9999 (30 May 2014)
+
+  30 May 2014; tharvik <layman@localhost> +mcomix-9999.ebuild, +metadata.xml:
+  Add media-gfx/mcomix-9999
+
