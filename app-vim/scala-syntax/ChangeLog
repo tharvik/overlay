@@ -1,0 +1,13 @@
+# ChangeLog for app-vim/scala-syntax
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Oct 2013; layman <layman@localhost> +metadata.xml,
+  scala-syntax-21921.ebuild:
+  Remove megatools, update app-vim/scala-syntax
+
+*scala-syntax-21921 (17 Oct 2013)
+
+  17 Oct 2013; Kéwan Marconnet <tharvik@gmail.com> +scala-syntax-21921.ebuild:
+  Add app-vim/scala-syntax testing ebuild
+

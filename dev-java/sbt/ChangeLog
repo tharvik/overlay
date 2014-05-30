@@ -1,0 +1,18 @@
+# ChangeLog for dev-java/sbt
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Sep 2013; Kéwan Marconnet <tharvik@gmail.com> sbt-0.12.2.ebuild:
+  Add the Scala IDE (dev-util/scala-ide), update the description of dev-
+  java/sbt
+
+  20 Sep 2013; Kéwan Marconnet <tharvik@gmail.com> -.sbt-0.12.2.ebuild.swp,
+  sbt-0.12.2.ebuild:
+  Update dev-java/sbt to a working state
+
+*sbt-0.12.2 (18 Sep 2013)
+
+  18 Sep 2013; Kéwan Marconnet <tharvik@gmail.com> +.sbt-0.12.2.ebuild.swp,
+  +metadata.xml, +sbt-0.12.2.ebuild:
+  Remove buggy and old ebuilds, add dev-java/sbt
+
