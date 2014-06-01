@@ -1,0 +1,10 @@
+# ChangeLog for net-misc/plowshare
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*plowshare-9999 (01 Jun 2014)
+
+  01 Jun 2014; tharvik <tharvik@gmail.com> +metadata.xml,
+  +plowshare-9999.ebuild:
+  Add net-misc/plowshare-9999
+
