@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -98,7 +98,7 @@ src_prepare() {
 	# make gtk3 configurable
 	sed -r "s:^(USE_GTK3) = (.*):\1?=\2:" -i Makefile ||
 		die "Makefile sed for gtk3 failed"
-	
+
 	# fix sandbox
 	if ! use experimental; then
 		sed -i 's/prefix=$(PREFIX)/prefix=$(DESTDIR)\/$(PREFIX)/' Makefile ||
@@ -115,7 +115,7 @@ src_install() {
 	use browser && targets="${targets} install-uzbl-browser"
 	use browser && use tabbed && targets="${targets} install-uzbl-tabbed"
 
-	emake -j1 DESTDIR="${D}" PREFIX="/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
+	emake DESTDIR="${D}" PREFIX="/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
 
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/ftdetect
