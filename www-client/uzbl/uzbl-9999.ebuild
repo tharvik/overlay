@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 IUSE="gtk3"
 if [[ ${PV} == *9999* ]]; then
@@ -115,7 +115,8 @@ src_install() {
 	use browser && targets="${targets} install-uzbl-browser"
 	use browser && use tabbed && targets="${targets} install-uzbl-tabbed"
 
-	emake DESTDIR="${D}" PREFIX="/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
+	# -j1 : upstream bug #351
+	emake -j1 DESTDIR="${D}" PREFIX="${EPREFIX}/usr" DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
 
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/ftdetect
