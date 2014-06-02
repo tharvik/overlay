@@ -2,6 +2,9 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
+  Fill upstream bug report for www-client/uzbl-9999
+
   01 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
   Remove whitespaces and emake -j1
 

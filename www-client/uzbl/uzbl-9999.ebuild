@@ -4,13 +4,12 @@
 
 EAPI="5"
 
-IUSE="gtk3"
 if [[ ${PV} == *9999* ]]; then
 	inherit git-2
 	EGIT_REPO_URI=${EGIT_REPO_URI:-"git://github.com/Dieterbe/uzbl.git"}
 	KEYWORDS=""
 	SRC_URI=""
-	IUSE+=" experimental"
+	IUSE="experimental"
 	use experimental &&
 		EGIT_BRANCH="next"
 else
@@ -24,7 +23,7 @@ HOMEPAGE="http://www.uzbl.org"
 
 LICENSE="LGPL-2.1 MPL-1.1"
 SLOT="0"
-IUSE+=" +browser helpers +tabbed vim-syntax"
+IUSE+=" gtk3 +browser helpers +tabbed vim-syntax"
 
 REQUIRED_USE="tabbed? ( browser )"
 
@@ -99,8 +98,13 @@ src_prepare() {
 	sed -r "s:^(USE_GTK3) = (.*):\1?=\2:" -i Makefile ||
 		die "Makefile sed for gtk3 failed"
 
+	# specify python version
+	sed -i "s:^#!/usr/bin/env python$:#!/usr/bin/env python2:" 		\
+		bin/uzbl-tabbed || die "uzbl-tabbed sed for python version failed"
+
 	# fix sandbox
-	if ! use experimental; then
+	if [ ${PV} == 9999 ] && ! use experimental
+	then
 		sed -i 's/prefix=$(PREFIX)/prefix=$(DESTDIR)\/$(PREFIX)/' Makefile ||
 			die "Makefile sed for sandbox failed"
 	fi
