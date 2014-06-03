@@ -3,6 +3,9 @@
 # $Header: $
 
   03 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
+  rather use python-single-r1 than python-utils-r1
+
+  03 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
   Better use python_fix_shebang rather than sed
 
 *uzbl-2012.05.14 (02 Jun 2014)

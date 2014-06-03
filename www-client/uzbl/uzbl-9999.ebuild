@@ -4,7 +4,9 @@
 
 EAPI="5"
 
-inherit python-utils-r1
+PYTHON_COMPAT=( python2_7 )
+
+inherit python-single-r1
 
 if [[ ${PV} == *9999* ]]; then
 	inherit git-2
@@ -71,6 +73,7 @@ RDEPEND="
 # TODO document what requires the above helpers
 
 pkg_setup() {
+	python-single-r1_pkg_setup
 	if ! use helpers; then
 		elog "uzbl's extra scripts use various optional applications:"
 		elog
@@ -101,7 +104,7 @@ src_prepare() {
 		die "Makefile sed for gtk3 failed"
 
 	# specify python version
-	EPYTHON=python2 python_fix_shebang bin/uzbl-tabbed ||
+	python_fix_shebang bin/uzbl-tabbed ||
 		die "Fix shebang failed"
 
 	# fix sandbox
