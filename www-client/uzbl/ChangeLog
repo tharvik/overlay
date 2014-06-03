@@ -2,6 +2,17 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
+  Better use python_fix_shebang rather than sed
+
+*uzbl-2012.05.14 (02 Jun 2014)
+
+  02 Jun 2014; tharvik <tharvik@gmail.com> +uzbl-2012.05.14.ebuild:
+  add 2012.05.14 version
+
+  02 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
+  Correct python version if needed, fix sandbox only if 9999
+
   02 Jun 2014; tharvik <tharvik@gmail.com> uzbl-9999.ebuild:
   Fill upstream bug report for www-client/uzbl-9999
 

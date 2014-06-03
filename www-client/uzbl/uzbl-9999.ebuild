@@ -4,6 +4,8 @@
 
 EAPI="5"
 
+inherit python-utils-r1
+
 if [[ ${PV} == *9999* ]]; then
 	inherit git-2
 	EGIT_REPO_URI=${EGIT_REPO_URI:-"git://github.com/Dieterbe/uzbl.git"}
@@ -99,8 +101,8 @@ src_prepare() {
 		die "Makefile sed for gtk3 failed"
 
 	# specify python version
-	sed -i "s:^#!/usr/bin/env python$:#!/usr/bin/env python2:" 		\
-		bin/uzbl-tabbed || die "uzbl-tabbed sed for python version failed"
+	EPYTHON=python2 python_fix_shebang bin/uzbl-tabbed ||
+		die "Fix shebang failed"
 
 	# fix sandbox
 	if [ ${PV} == 9999 ] && ! use experimental
