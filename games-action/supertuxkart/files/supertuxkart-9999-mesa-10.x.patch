@@ -1,0 +1,19 @@
+diff -Naur a/lib/irrlicht/source/Irrlicht/COpenGLExtensionHandler.h b/lib/irrlicht/source/Irrlicht/COpenGLExtensionHandler.h
+--- a/lib/irrlicht/source/Irrlicht/COpenGLExtensionHandler.h	2014-06-24 12:27:12.711569939 +0200
++++ b/lib/irrlicht/source/Irrlicht/COpenGLExtensionHandler.h	2014-06-24 12:28:54.007687837 +0200
+@@ -21,6 +21,7 @@
+ 	#endif
+ 	#include <GL/gl.h>
+ 	#if defined(_IRR_OPENGL_USE_EXTPOINTER_)
++		typedef void (APIENTRYP PFNGLBLENDEQUATIONPROC) (GLenum mode);
+ 		#include "glext.h"
+ 	#endif
+ 	#include "wglext.h"
+@@ -36,6 +37,7 @@
+ 	#endif
+ 	#include <OpenGL/gl.h>
+ 	#if defined(_IRR_OPENGL_USE_EXTPOINTER_)
++		typedef void (APIENTRYP PFNGLBLENDEQUATIONPROC) (GLenum mode);
+ 		#include "glext.h"
+ 	#endif
+ #elif defined(_IRR_COMPILE_WITH_SDL_DEVICE_) && !defined(_IRR_COMPILE_WITH_X11_DEVICE_)

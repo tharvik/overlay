@@ -1,0 +1,35 @@
+diff -Naur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2014-06-24 17:39:04.311245923 +0200
++++ b/CMakeLists.txt	2014-06-24 17:40:13.024207240 +0200
+@@ -141,6 +141,13 @@
+ endif()
+ 
+ 
++# Irrlicht
++if (APPLE)
++    set(IRRLICHT_LIBRARY "/Library/Frameworks/IrrFramework.framework")
++else()
++    set(IRRLICHT_LIBRARY ${PROJECT_SOURCE_DIR}/lib/irrlicht/lib/Linux/libIrrlicht.a)
++endif()
++
+     
+ # Set some compiler options
+ if(UNIX)
+@@ -244,10 +251,16 @@
+     enet
+     stkirrlicht
+     ${CURL_LIBRARIES}
++    ${IRRLICHT_LIBRARIES}
+     ${OGGVORBIS_LIBRARIES}
++    ${IRRLICHT_LIBRARY}
+     ${IRRLICHT_XF86VM_LIBRARY}
+     ${OPENAL_LIBRARY}
+-    ${OPENGL_LIBRARIES})
++    ${OPENGL_LIBRARIES}
++    png
++    jpeg
++    bz2
++    z)
+ 
+ 
+ if(APPLE)

@@ -2,6 +2,8 @@
 # your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using egencache *
 
+games-action/supertuxkart:fribidi - Support for right-to-left languages
+games-action/supertuxkart:wiimote - Support for wiimote input devices
 net-misc/fatrat:bittorrent - Use the bittorrent protocol via net-libs/rb_libtorrent.
 net-misc/fatrat:webinterface - Enable builtin webinterface.
 net-misc/plowshare:view-captcha - View captcha with aview
