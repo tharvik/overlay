@@ -1,0 +1,12 @@
+diff -Naur a/inc/Module/Install/PRIVATE/Net/SSLeay.pm b/inc/Module/Install/PRIVATE/Net/SSLeay.pm
+--- a/inc/Module/Install/PRIVATE/Net/SSLeay.pm	2014-07-20 15:46:58.970882875 +0200
++++ b/inc/Module/Install/PRIVATE/Net/SSLeay.pm	2014-07-20 15:47:19.374105674 +0200
+@@ -229,7 +229,7 @@
+         chomp $output;
+         close $pipe;
+ 
+-        unless ( ($major, $minor, $letter) = $output =~ /^OpenSSL\s+(\d+\.\d+)\.(\d+)([a-z]?)/ ) {
++        unless ( (my $zero, $major, $minor, $letter) = $output =~ /^(Open|Libre)SSL\s+(\d+(\.\d+)?)\.(\d+)([a-z]?)/ ) {
+             die <<EOM
+ *** OpenSSL version test failed
+     (`$output' has been returned)
