@@ -134,8 +134,7 @@ src_install() {
 	use browser && targets="${targets} install-uzbl-browser"
 	use browser && use tabbed && targets="${targets} install-uzbl-tabbed"
 
-	# -j1 : upstream bug #351
-	emake -j1 DESTDIR="${D}" PREFIX="${PREFIX}"	\
+	emake DESTDIR="${D}" PREFIX="${PREFIX}"	\
 		DOCDIR="${ED}/usr/share/doc/${PF}" ${targets}
 
 	if use vim-syntax; then
