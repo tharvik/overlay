@@ -11,7 +11,7 @@ DESCRIPTION="vim plugin: Scala source file syntax highlighting"
 HOMEPAGE="https://lampsvn.epfl.ch/trac/scala/browser/scala-tool-support/trunk/src/vim"
 LICENSE="vim.org"
 KEYWORDS="~amd64"
-SRC_URI="https://lampsvn.epfl.ch/trac/scala/changeset?format=zip&new=21921 -> ${P}.zip"
+SRC_URI="https://lampsvn.epfl.ch/trac/scala/changeset?format=zip&new=${PV} -> ${P}.zip"
 IUSE=""
 
 src_unpack() {

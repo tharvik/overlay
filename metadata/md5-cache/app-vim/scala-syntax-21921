@@ -7,4 +7,4 @@ LICENSE=vim.org
 SLOT=0
 SRC_URI=https://lampsvn.epfl.ch/trac/scala/changeset?format=zip&new=21921 -> scala-syntax-21921.zip
 _eclasses_=eutils	32548a82e42dc26e3312581476d2f20c	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	0f1760274637a138b99bb649202ea402
-_md5_=2efba8ac24ad7101ab2185e1cd288ff1
+_md5_=bbb27cf661619c798a4da78677a93e8c
