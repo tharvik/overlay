@@ -53,6 +53,7 @@ DEPEND="
 RDEPEND="
 	${COMMON_DEPEND}
 	x11-misc/xdg-utils
+	dev-python/six
 	browser? (
 		x11-misc/xclip
 	)
@@ -102,8 +103,8 @@ src_prepare() {
 		die '-ggdb removal sed failed'
 
 	# make gtk3 configurable
-	sed -r 's:^(USE_GTK3) = (.*):\1?=\2:' -i Makefile ||
-		die 'Makefile sed for gtk3 failed'
+	[[ ${PV} != 9999 ]] &&
+		epatch "${FILESDIR}/${P}_gtk3_no_autodep.patch"
 
 	# specify python version
 	python_fix_shebang bin/uzbl-tabbed ||
@@ -125,8 +126,7 @@ src_prepare() {
 }
 
 src_compile() {
-	[[ ${PV} == 9999 ]] && gtk_var='ENABLE_GTK3' || gtk_var='USE_GTK3'
-	emake PREFIX="${PREFIX}" ${gtk_var}=$(use gtk3 && echo 1 || echo 0)
+	emake PREFIX="${PREFIX}" ENABLE_GTK3=$(usex gtk3 yes no '' '')
 }
 
 src_install() {

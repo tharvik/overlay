@@ -1,9 +1,0 @@
-# ChangeLog for net-p2p/i2pd
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*i2pd-9999 (05 Oct 2014)
-
-  05 Oct 2014; layman <layman@localhost> +i2pd-9999.ebuild, +metadata.xml:
-  add new ebuild
-

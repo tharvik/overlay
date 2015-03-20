@@ -3,12 +3,12 @@ DEPEND=virtual/pkgconfig dev-libs/glib:2 >=dev-libs/icu-4.0.1 >=net-libs/libsoup
 DESCRIPTION=Web interface tools which adhere to the unix philosophy.
 EAPI=5
 HOMEPAGE=http://www.uzbl.org
-IUSE=gtk3 +browser helpers +tabbed vim-syntax python_targets_python2_7 python_single_target_python2_7
+IUSE=gtk3 +browser helpers +tabbed vim-syntax python_targets_python2_7
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
 LICENSE=LGPL-2.1 MPL-1.1
-RDEPEND=dev-libs/glib:2 >=dev-libs/icu-4.0.1 >=net-libs/libsoup-2.24:2.4 !gtk3? ( >=net-libs/webkit-gtk-1.1.15:2 >=x11-libs/gtk+-2.14:2 ) gtk3? ( net-libs/webkit-gtk:3 x11-libs/gtk+:3 ) x11-misc/xdg-utils browser? ( x11-misc/xclip ) helpers? ( dev-python/pygtk dev-python/pygobject:2 gnome-extra/zenity net-misc/socat x11-libs/pango x11-misc/dmenu x11-misc/xclip ) tabbed? ( dev-python/pygtk ) vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )
+RDEPEND=dev-libs/glib:2 >=dev-libs/icu-4.0.1 >=net-libs/libsoup-2.24:2.4 !gtk3? ( >=net-libs/webkit-gtk-1.1.15:2 >=x11-libs/gtk+-2.14:2 ) gtk3? ( net-libs/webkit-gtk:3 x11-libs/gtk+:3 ) x11-misc/xdg-utils dev-python/six browser? ( x11-misc/xclip ) helpers? ( dev-python/pygtk dev-python/pygobject:2 gnome-extra/zenity net-misc/socat x11-libs/pango x11-misc/dmenu x11-misc/xclip ) tabbed? ( dev-python/pygtk ) vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )
 REQUIRED_USE=tabbed? ( browser )
 SLOT=0
 SRC_URI=http://github.com/Dieterbe/uzbl/tarball/2012.05.14 -> uzbl-2012.05.14.tar.gz
-_eclasses_=eutils	32548a82e42dc26e3312581476d2f20c	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	python-single-r1	a71a169a881e0a11d04a7fe12dc39f6e	python-utils-r1	47dda904cf91c61f45b564d9f834fde1	toolchain-funcs	0f1760274637a138b99bb649202ea402	vcs-snapshot	58b766562c9fbfb3268b04e33cdf2f66
-_md5_=870f950af2789f3c3426775cb98f52fe
+_eclasses_=eutils	998e5931fb95b10a6a11ec796ada2759	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	python-single-r1	f782db6207752efeca1d59c016d8c813	python-utils-r1	e3288bc2e6e487674ce218b632701c9e	toolchain-funcs	b99aa37f734b5d426efd83b2f271cece	vcs-snapshot	58b766562c9fbfb3268b04e33cdf2f66
+_md5_=34e95fdf3c9da74e3e2a80287629c8b1
