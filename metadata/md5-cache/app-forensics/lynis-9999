@@ -1,0 +1,10 @@
+DEFINED_PHASES=install postinst prepare unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Security and system auditing tool
+EAPI=5
+HOMEPAGE=http://cisofy.com/lynis/
+LICENSE=GPL-3
+RDEPEND=app-shells/bash
+SLOT=0
+_eclasses_=bash-completion-r1	c8399c7c7ecbcf7ed6e5bd3abb3d4af3	eutils	998e5931fb95b10a6a11ec796ada2759	git-2	e28f0d8a9b321431b1e699782851b827	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	b99aa37f734b5d426efd83b2f271cece
+_md5_=01f7f6d2bf48dd1c82e0c7ba57ac2318

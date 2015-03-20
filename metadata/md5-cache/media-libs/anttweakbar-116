@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=C/C++ library to add light and intuitive GUI to OpenGL and DX programs
+EAPI=5
+HOMEPAGE=http://anttweakbar.sourceforge.net/doc/
+KEYWORDS=~amd64
+LICENSE=zlib
+SLOT=0
+SRC_URI=mirror://sourceforge/anttweakbar/anttweakbar-116.tar.gz
+_md5_=ee491ff4909476387398b9ef686c9f4a

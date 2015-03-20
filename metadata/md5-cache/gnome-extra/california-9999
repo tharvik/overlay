@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare unpack
+DEPEND=>=dev-libs/glib-2.38:2 >=dev-libs/gobject-introspection-1.38 >=dev-libs/libgdata-0.14 >=dev-libs/libgee-0.10.5:0.8 >=net-libs/gnome-online-accounts-3.8.3 >=net-libs/libsoup-2.44:2.4 >=gnome-extra/evolution-data-server-3.8 >=x11-libs/gtk+-3.12.2:3 x11-misc/xdg-utils || ( dev-lang/vala:0.26 dev-lang/vala:0.24 dev-lang/vala:0.22 dev-lang/vala:0.20 ) app-text/yelp-tools >=dev-util/intltool-0.35 sys-devel/gettext virtual/pkgconfig app-arch/xz-utils >=sys-apps/sed-4 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.13:1.13 >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 dev-vcs/git
+DESCRIPTION=Manage your online calendars with simple and modern interface
+EAPI=5
+HOMEPAGE=https://wiki.gnome.org/Apps/California
+LICENSE=LGPL-2.1+
+RDEPEND=>=dev-libs/glib-2.38:2 >=dev-libs/gobject-introspection-1.38 >=dev-libs/libgdata-0.14 >=dev-libs/libgee-0.10.5:0.8 >=net-libs/gnome-online-accounts-3.8.3 >=net-libs/libsoup-2.44:2.4 >=gnome-extra/evolution-data-server-3.8 >=x11-libs/gtk+-3.12.2:3 x11-misc/xdg-utils
+SLOT=0
+_eclasses_=autotools	8fc2dd333ef9346c906ffd9a523d8211	eutils	998e5931fb95b10a6a11ec796ada2759	fdo-mime	0acfe1a88fd8751a1d5dc671168219fa	git-2	e28f0d8a9b321431b1e699782851b827	gnome.org	8fef8f967214f56e08fa92d61163d891	gnome2	c77a2c791ae15742c3c796344e279142	gnome2-utils	5cdfd22a2163c9d3a891648bd19453a7	libtool	52d0e17251d04645ffaa61bfdd858944	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	b99aa37f734b5d426efd83b2f271cece	vala	a41415fe361172827ed11b6a32ee38fb	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=b19a110d29bae1c2daf42a5ecb7059e8
