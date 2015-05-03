@@ -7,5 +7,6 @@ If you want to add this overlay copy tharvik.xml to /etc/layman/overlays/
 then add tharvik to layman.
 ```
 cp tharvik.xml /etc/layman/overlays/
+layman -S
 layman -a tharvik
 ```
