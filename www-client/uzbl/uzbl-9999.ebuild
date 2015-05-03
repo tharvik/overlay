@@ -40,7 +40,10 @@ COMMON_DEPEND='
 		>=x11-libs/gtk+-2.14:2
 	)
 	gtk3? (
-		net-libs/webkit-gtk:3
+		|| (
+			net-libs/webkit-gtk:3
+			experimental? ( net-libs/webkit-gtk:4 )
+		)
 		x11-libs/gtk+:3
 	)
 '
@@ -126,7 +129,7 @@ src_prepare() {
 }
 
 src_compile() {
-	emake PREFIX="${PREFIX}" ENABLE_GTK3=$(usex gtk3 yes no '' '')
+	emake PREFIX="${PREFIX}" ENABLE_GTK3=$(usex gtk3 yes no '' '') ENABLE_WEBKIT2=$(usex gtk3 yes no '' '')
 }
 
 src_install() {
