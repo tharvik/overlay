@@ -8,5 +8,5 @@ LICENSE=GPL-2
 RDEPEND=dev-python/setuptools[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] >=dev-python/pygtk-2.14[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] virtual/jpeg virtual/python-imaging[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] x11-libs/gdk-pixbuf !media-gfx/comix python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7[sqlite] ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,-python_single_target_python2_7(-)]
 REQUIRED_USE=|| ( python_targets_python2_7 )
 SLOT=0
-_eclasses_=distutils-r1	c01d5c4af34f4a37a51fc9638299c222	eutils	998e5931fb95b10a6a11ec796ada2759	fdo-mime	0acfe1a88fd8751a1d5dc671168219fa	multibuild	6d4858dc00f8bc51caf3f957f8430eb0	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	multiprocessing	d7f2985a2c76c365ee20269db5261414	python-r1	331701099758706863819fe3ff6ddc8a	python-utils-r1	e3288bc2e6e487674ce218b632701c9e	subversion	c12bdf4fcc82f86ad89b14c8f76c4026	toolchain-funcs	b99aa37f734b5d426efd83b2f271cece
-_md5_=243c3badd3bd288ea9e89e7a1fed1216
+_eclasses_=distutils-r1	46506dd0dd992b3c89b0d00daabfd86c	eutils	95613dd6157fb4a3b225eafdc56bd441	fdo-mime	92d07846ea8ea54172f8c0112a47ae3d	multibuild	ce2c2ede0c914b77f5dfc4e2ff2d0249	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	python-r1	32b376cbb100a3a8083b3a0de023e117	python-utils-r1	39c6b012a0512678e698e712b5b7ecc2	subversion	4fee0a764150bb4dda27ed4d2c4ed7ce	toolchain-funcs	1dfcad7b3f439dbc511d76c49f23da0d
+_md5_=96294c4e165554d234193b89a497c56c

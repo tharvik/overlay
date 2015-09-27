@@ -6,4 +6,4 @@ KEYWORDS=~amd64
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=http://megatools.megous.com/builds/megatools-1.9.91.tar.gz
-_md5_=26a443b18cc50539c9edd5e21bcbfe80
+_md5_=041cd309000243d9c1fcdc78c5b60c36

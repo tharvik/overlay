@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/uzbl/uzbl-9999.ebuild,v 1.29 2014/07/06 12:18:50 swift Exp $
+# $Id$
 
 EAPI='5'
 
@@ -13,7 +13,6 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI=${EGIT_REPO_URI:-'git://github.com/Dieterbe/uzbl.git'}
 	KEYWORDS=''
 	SRC_URI=''
-	IUSE='experimental'
 	use experimental &&
 		EGIT_BRANCH='next'
 else
@@ -27,7 +26,7 @@ HOMEPAGE='http://www.uzbl.org'
 
 LICENSE='LGPL-2.1 MPL-1.1'
 SLOT='0'
-IUSE+=' gtk3 +browser helpers +tabbed vim-syntax'
+IUSE='experimental gtk3 +browser helpers +tabbed vim-syntax'
 
 REQUIRED_USE='tabbed? ( browser )'
 

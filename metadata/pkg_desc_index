@@ -1,0 +1,17 @@
+app-forensics/lynis 9999: Security and system auditing tool
+app-vim/scala-syntax 21921: vim plugin: Scala source file syntax highlighting
+dev-libs/libnoise 9999: A portable, open-source, coherent noise-generating library for C++
+dev-util/kconfig 9999: kconfig, which supports the pushd/popd directives
+dev-util/stdman 9999: Formatted C++11/14 stdlib man pages (cppreference)
+games-simulation/COG 9999: C++ OpenGL
+gnome-extra/california 9999: Manage your online calendars with simple and modern interface
+media-gfx/mcomix 9999: A fork of comix, a GTK image viewer for comic book archives.
+media-sound/picard 9999: A cross-platform music tagger
+net-misc/megacmd 9999: A command-line client for mega.co.nz storage service
+net-misc/megatools 1.9.91: Command line client for Mega.co.nz
+net-misc/plowshare 9999: Command-line downloader and uploader for file-sharing websites
+net-misc/youtube-dl 9999: Download videos from YouTube.com (and mores sites...)
+net-p2p/freenet 9999: An encrypted network without censorship
+net-p2p/yacy 1.62: YaCy is a distributed search engine.
+sys-devel/tup 9999: Tup is a file-based build system.
+www-client/uzbl 2012.05.14 2012.05.14-r1 9999: Web interface tools which adhere to the unix philosophy.

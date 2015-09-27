@@ -6,5 +6,5 @@ HOMEPAGE=https://github.com/t3rm1n4l/megacmd
 LICENSE=MIT
 RDEPEND=dev-lang/go
 SLOT=0
-_eclasses_=git-2	e28f0d8a9b321431b1e699782851b827
-_md5_=47f0e48bfdf542b2c98d2372c4c7e9fb
+_eclasses_=git-2	1bb87192831f668cd20d93ffb1689c94
+_md5_=33806697e7fe1962e6727f17d97b784e

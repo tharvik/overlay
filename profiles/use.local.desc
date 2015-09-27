@@ -2,14 +2,10 @@
 # your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using egencache *
 
-games-action/supertuxkart:fribidi - Support for right-to-left languages
-games-action/supertuxkart:wiimote - Support for wiimote input devices
-net-misc/fatrat:bittorrent - Use the bittorrent protocol via net-libs/rb_libtorrent.
-net-misc/fatrat:webinterface - Enable builtin webinterface.
+media-sound/picard:acoustid - Use media-libs/chromaprint for acoustic fingerprinting
 net-misc/plowshare:view-captcha - View captcha with aview
 www-client/uzbl:browser - Install the uzbl-browser script
 www-client/uzbl:experimental - Enable experimental branch
 www-client/uzbl:gtk3 - Use x11-libs/gtk+:3 instead of x11-libs/gtk+:2
 www-client/uzbl:helpers - Optional tools used by uzbl scripts
 www-client/uzbl:tabbed - Install the uzbl-tabbed script
-x11-misc/i3lock:text - Add text feedback when checking for the password

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -11,7 +11,7 @@ HOMEPAGE='http://gittup.org/tup/'
 EGIT_REPO_URI='git://github.com/gittup/tup.git'
 SRC_URI=""
 
-LICENSE='GPL2'
+LICENSE='GPL-2'
 SLOT=0
 KEYWORDS=''
 IUSE=''
@@ -29,5 +29,4 @@ src_install() {
 
 	doman tup.1
 	dodoc README.md
-	dodoc COPYING
 }

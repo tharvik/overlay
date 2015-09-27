@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -39,10 +39,10 @@ DOCS='AUTHORS.txt NEWS.txt'
 
 DOC_CONTENTS="If you are upgrading Picard and it does not start,
 try removing Picard's settings:
-    rm ~/.config/MusicBrainz/Picard.conf
+\trm ~/.config/MusicBrainz/Picard.conf
 
 You should set the environment variable BROWSER to something like
-    firefox '%s' &
+\tfirefox '%s' &
 to let python know which browser to use."
 
 src_compile() {
