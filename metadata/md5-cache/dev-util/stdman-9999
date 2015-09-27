@@ -1,0 +1,9 @@
+DEFINED_PHASES=unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Formatted C++11/14 stdlib man pages (cppreference)
+EAPI=5
+HOMEPAGE=https://github.com/jeaye/stdman
+LICENSE=MIT
+SLOT=0
+_eclasses_=git-2	1bb87192831f668cd20d93ffb1689c94
+_md5_=af259503e189f03b6741471a58beb704
