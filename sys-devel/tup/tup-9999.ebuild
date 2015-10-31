@@ -21,7 +21,12 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	addwrite '/dev/fuse'
-	./bootstrap.sh
+	./bootstrap.sh || die
+}
+
+src_test() {
+	cd "${S}/test"
+	./test.sh || die
 }
 
 src_install() {
