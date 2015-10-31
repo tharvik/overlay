@@ -1,9 +1,9 @@
-DEFINED_PHASES=compile install unpack
+DEFINED_PHASES=compile install test unpack
 DEPEND=dev-vcs/git
 DESCRIPTION=Tup is a file-based build system.
 EAPI=5
 HOMEPAGE=http://gittup.org/tup/
 LICENSE=GPL-2
 SLOT=0
-_eclasses_=git-2	1bb87192831f668cd20d93ffb1689c94
-_md5_=cfea8c2f6775f3b6c80901276c92497d
+_eclasses_=git-2	32530738ee006bc09e1ac93f6e73d719
+_md5_=7298c336eccc8c0441500fc347dc22ca

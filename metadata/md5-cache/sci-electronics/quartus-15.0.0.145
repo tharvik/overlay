@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst prepare
+DEPEND=dev-tcltk/expect virtual/pkgconfig
+DESCRIPTION=The complete suite of Altera design tools
+EAPI=5
+HOMEPAGE=https://www.altera.com/
+IUSE=doc arria2 arria10p1 arria10p2 arria10p3 arria5 arria5gz cyclone4 cyclone5 max2 max10 stratix4 stratix5
+KEYWORDS=~amd64
+RDEPEND=dev-tcltk/expect
+REQUIRED_USE=arria10p2? ( arria10p1 arria10p3 )
+SLOT=0
+SRC_URI=http://download.altera.com/akdlm/software/acdsinst/15.0/145/ib_tar/Quartus-15.0.0.145-linux-complete.tar
+_eclasses_=multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	udev	37ef89be271b9ae8aa64be024ddb39b5
+_md5_=2bd20e16717f221559751452377497f8

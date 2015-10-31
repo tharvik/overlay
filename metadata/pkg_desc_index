@@ -1,5 +1,4 @@
 app-forensics/lynis 9999: Security and system auditing tool
-app-vim/scala-syntax 21921: vim plugin: Scala source file syntax highlighting
 dev-libs/libnoise 9999: A portable, open-source, coherent noise-generating library for C++
 dev-util/kconfig 9999: kconfig, which supports the pushd/popd directives
 dev-util/stdman 9999: Formatted C++11/14 stdlib man pages (cppreference)
@@ -13,5 +12,6 @@ net-misc/plowshare 9999: Command-line downloader and uploader for file-sharing w
 net-misc/youtube-dl 9999: Download videos from YouTube.com (and mores sites...)
 net-p2p/freenet 9999: An encrypted network without censorship
 net-p2p/yacy 1.62: YaCy is a distributed search engine.
+sci-electronics/quartus 15.0.0.145: The complete suite of Altera design tools
 sys-devel/tup 9999: Tup is a file-based build system.
 www-client/uzbl 2012.05.14 2012.05.14-r1 9999: Web interface tools which adhere to the unix philosophy.

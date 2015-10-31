@@ -5,5 +5,5 @@ EAPI=5
 HOMEPAGE=https://github.com/jeaye/stdman
 LICENSE=MIT
 SLOT=0
-_eclasses_=git-2	1bb87192831f668cd20d93ffb1689c94
+_eclasses_=git-2	32530738ee006bc09e1ac93f6e73d719
 _md5_=af259503e189f03b6741471a58beb704
