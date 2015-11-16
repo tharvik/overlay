@@ -26,7 +26,7 @@ done
 REQUIRED_USE='
 	arria10p2? ( arria10p1 arria10p3 )
 	'
-COMMON_DEPEND='
+DEPEND='
 	dev-lang/tcl
 	dev-libs/expat[abi_x86_32(-)]
 	dev-tcltk/tcllib
@@ -51,10 +51,6 @@ COMMON_DEPEND='
 	x11-libs/libXtst[abi_x86_32(-)]
 	virtual/libc
 	'
-DEPEND="
-	${DEPEND}
-	dev-tcltk/expect
-	"
 RDEPEND="${DEPEND}"
 
 ENVD="99${PN}"
@@ -113,8 +109,6 @@ src_compile() {
 	answers+=n	# want shortcuts on Desktop?
 	answers+=n	# do not launch quartus
 	answers+=n	# give feedback
-
-	echo ">>>>\"${answers}\""
 
 	for i in $(seq ${#answers})
 	do
