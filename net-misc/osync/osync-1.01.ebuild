@@ -4,7 +4,7 @@
 
 EAPI=5
 
-DESCRIPTION='A robust two way (bidirectional) file sync script based on rsync with fault tolerance'
+DESCRIPTION='A robust two way file sync script based on rsync with fault tolerance'
 HOMEPAGE='http://www.netpower.fr/osync'
 SRC_URI="https://github.com/deajan/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,7 +13,7 @@ SLOT='0'
 KEYWORDS='~amd64'
 IUSE='doc'
 
-DEPEND='
+HDEPEND='
 	doc? ( app-office/lyx )
 '
 RDEPEND='
@@ -35,7 +35,9 @@ src_compile() {
 src_install() {
 	use doc && newdoc 'Osync v1.00a.txt' "${PN}"
 
-	newconfd sync.conf osync
+	dodir "/etc/${PN}"
+	insinto "/etc/${PN}"
+	doins sync.conf exclude.list.example
 
 	dobin "${PN}.sh"
 	dobin "${PN}-batch.sh"
