@@ -22,13 +22,27 @@ RDEPEND='
 		app-shells/bash
 		app-shells/dash
 	)
+	sys-apps/coreutils
 '
 
 src_install() {
-	find "${S}" -executable -type f ! -path '*/.git/*' | while read l
+	for f in *
 	do
-		dosbin "${l}"
+		[ -d "${f}" ] && continue
+
+		case "${f}" in
+			README.md) continue;;
+			LICENSE) continue;;
+		esac
+
+		if [ -x "${f}" ]
+		then
+			dosbin "${f}"
+		else
+			cp "${f}" "${D}/usr/sbin"
+		fi
 	done
 
 	dodoc README.md
+	dodoc LICENSE
 }
