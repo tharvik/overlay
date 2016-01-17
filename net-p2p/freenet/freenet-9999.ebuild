@@ -1,9 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI="5"
-DATE=20140810
+DATE=20150812
 JAVA_PKG_IUSE="doc source"
 
 inherit eutils git-2 java-pkg-2 java-ant-2 multilib systemd user
