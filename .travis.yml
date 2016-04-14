@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t tharvik/overlay:latest .
+  - docker login --email="$DOCKER_EMAIL" --user="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
+  - docker push tharvik/overlay:latest
+
+script:
+  - repoman full
