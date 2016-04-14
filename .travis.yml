@@ -4,9 +4,25 @@ services:
   - docker
 
 before_install:
+  - ./check.sh
+  # we do need to build it again as travis and docker build start at the same
+  # time thus it won't really be the latest
   - docker build -t tharvik/overlay:latest .
-  - docker login --email="$DOCKER_EMAIL" --user="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
-  - docker push tharvik/overlay:latest
+
+env:
+  - PACKAGE=app-portage/gentools
+  - PACKAGE=dev-python/mypy
+  - PACKAGE=dev-util/stdman
+  - PACKAGE=dev-util/kconfig
+  - PACKAGE=media-gfx/mcomix
+  - PACKAGE=media-libs/libbpg
+  - PACKAGE=media-sound/picard
+  - PACKAGE=net-misc/osync
+  - PACKAGE=net-p2p/freenet
+  - PACKAGE=sci-electronics/logisim-evolution
+  - PACKAGE=sci-electronics/logisim-bin
+  - PACKAGE=sys-devel/tup
+  - PACKAGE=x11-libs/gdk-pixbuf
 
 script:
-  - repoman full
+  - docker run tharvik/overlay:latest /overlay/test.sh "${PACKAGE}"
