@@ -11,16 +11,21 @@ before_install:
 
 env:
   - PACKAGE=app-portage/gentools
+  - PACKAGE=dev-python/elasticsearch-dsl
   - PACKAGE=dev-python/mypy
-  - PACKAGE=dev-util/stdman
+  - PACKAGE=dev-python/nessus
+  - PACKAGE=dev-python/nexpose
+  - PACKAGE=dev-python/python-nmap
+  - PACKAGE=dev-python/toml
   - PACKAGE=dev-util/kconfig
+  - PACKAGE=dev-util/stdman
   - PACKAGE=media-gfx/mcomix
   - PACKAGE=media-libs/libbpg
   - PACKAGE=media-sound/picard
   - PACKAGE=net-misc/osync
   - PACKAGE=net-p2p/freenet
-  - PACKAGE=sci-electronics/logisim-evolution
   - PACKAGE=sci-electronics/logisim-bin
+  - PACKAGE=sci-electronics/logisim-evolution
   - PACKAGE=sys-devel/tup
   - PACKAGE=x11-libs/gdk-pixbuf
 
