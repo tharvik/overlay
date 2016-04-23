@@ -1,0 +1,35 @@
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2016-04-23 15:35:24.353646894 +0200
++++ b/Makefile	2016-04-23 15:35:57.770646732 +0200
+@@ -39,6 +39,7 @@
+ PWD:=$(shell pwd)
+ 
+ 
++CFLAGS+=-fPIC
+ CFLAGS+=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT
+ CFLAGS+=-I.
+ CFLAGS+=-DCONFIG_BPG_VERSION=\"$(shell cat VERSION)\"
+@@ -186,17 +187,17 @@
+ 
+ bpgenc.o: CFLAGS+=-Wno-unused-but-set-variable
+ 
+-libbpg.a: $(LIBBPG_OBJS) 
+-	$(AR) rcs $@ $^
++libbpg.so: $(LIBBPG_OBJS) 
++	$(CC) -shared -o $@ $^
+ 
+-bpgdec$(EXE): bpgdec.o libbpg.a
+-	$(CC) $(LDFLAGS) -o $@ $^ $(BPGDEC_LIBS)
++bpgdec$(EXE): bpgdec.o libbpg.so
++	$(CC) $(LDFLAGS) -lbpg -L. -o $@ $^ $(BPGDEC_LIBS)
+ 
+ bpgenc$(EXE): $(BPGENC_OBJS)
+ 	$(CXX) $(LDFLAGS) -o $@ $^ $(BPGENC_LIBS)
+ 
+-bpgview$(EXE): bpgview.o libbpg.a
+-	$(CC) $(LDFLAGS) -o $@ $^ $(BPGVIEW_LIBS)
++bpgview$(EXE): bpgview.o libbpg.so
++	$(CC) $(LDFLAGS) -lbpg -L. -o $@ $^ $(BPGVIEW_LIBS)
+ 
+ bpgdec.js: $(LIBBPG_JS_OBJS) post.js
+ 	$(EMCC) $(EMLDFLAGS) -s TOTAL_MEMORY=33554432 -o $@ $(LIBBPG_JS_OBJS)

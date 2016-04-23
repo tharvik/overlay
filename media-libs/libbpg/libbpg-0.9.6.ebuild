@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -35,6 +35,9 @@ src_configure() {
 		sed -i "s|^${v}:\?=.*||" Makefile || die 'unable to remove flags'
 	done
 	sed -i 's|CFLAGS+=-g||' Makefile || die 'unable to remove flags'
+
+	# apply to go to shared library
+	epatch "${FILESDIR}/${P}-shared-lib.patch"
 }
 
 src_install() {
@@ -43,7 +46,7 @@ src_install() {
 		dobin bpgenc bpgdec bpgview
 	fi
 
-	dolib.a "${PN}.a"
+	dolib "${PN}.so"
 
 	insinto /usr/include
 	doins libbpg.h
