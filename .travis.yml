@@ -11,17 +11,26 @@ before_install:
 
 env:
   - PACKAGE=app-portage/gentools
+  - PACKAGE=dev-python/commonmark
   - PACKAGE=dev-python/elasticsearch-dsl
+  - PACKAGE=dev-python/gnureadline
   - PACKAGE=dev-python/mypy
   - PACKAGE=dev-python/nessus
   - PACKAGE=dev-python/nexpose
+  - PACKAGE=dev-python/nilsimsa
   - PACKAGE=dev-python/python-nmap
+  - PACKAGE=dev-python/readthedocs-build
+  - PACKAGE=dev-python/readthedocs-sphinx-ext
+  - PACKAGE=dev-python/recommonmark
   - PACKAGE=dev-python/toml
+  - PACKAGE=dev-python/typeshed
+  - PACKAGE=dev-python/w3af-api-client
   - PACKAGE=dev-util/kconfig
   - PACKAGE=dev-util/stdman
   - PACKAGE=media-gfx/mcomix
   - PACKAGE=media-libs/libbpg
   - PACKAGE=media-sound/picard
+  - PACKAGE=net-analyzer/routersploit
   - PACKAGE=net-misc/osync
   - PACKAGE=net-p2p/freenet
   - PACKAGE=sci-electronics/logisim-bin
