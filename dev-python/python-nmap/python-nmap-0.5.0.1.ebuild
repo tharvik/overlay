@@ -15,7 +15,7 @@ DESCRIPTION='Python class to use nmap and access scan results'
 HOMEPAGE='http://xael.org/pages/python-nmap-en.html'
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
 
-LICENSE=''
+LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS='~amd64'
 IUSE=''
