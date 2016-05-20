@@ -8,4 +8,5 @@ cd "/overlay/${PACKAGE}"
 
 repoman full
 
-emerge-accept "${PACKAGE}"
+emerge-accept --onlydeps "${PACKAGE}"
+emerge-accept --verbose --jobs=1 "${PACKAGE}"
