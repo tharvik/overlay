@@ -13,7 +13,7 @@ HOMEPAGE='https://github.com/tharvik/nessus'
 SRC_URI=''
 EGIT_REPO_URI='https://github.com/tharvik/nessus.git'
 
-LICENSE=''
+LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS=''
 IUSE='test'
