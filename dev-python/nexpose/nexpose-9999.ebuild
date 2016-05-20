@@ -13,7 +13,7 @@ HOMEPAGE='https://github.com/tharvik/nexpose'
 SRC_URI=''
 EGIT_REPO_URI='https://github.com/tharvik/nexpose.git'
 
-LICENSE=''
+LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS=''
 IUSE='test'
