@@ -25,6 +25,7 @@ env:
   - PACKAGE=dev-python/recommonmark
   - PACKAGE=dev-python/toml
   - PACKAGE=dev-python/typeshed
+  - PACKAGE=dev-python/urllib3
   - PACKAGE=dev-python/w3af-api-client
   - PACKAGE=dev-util/kconfig
   - PACKAGE=dev-util/stdman

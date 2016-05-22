@@ -1,0 +1,12 @@
+diff -Naur a/setup.py b/setup.py
+--- a/setup.py	2016-05-22 12:53:41.567780550 +0200
++++ b/setup.py	2016-05-22 12:54:01.825779646 +0200
+@@ -39,7 +39,7 @@
+       url='http://urllib3.readthedocs.org/',
+       license='MIT',
+       packages=['urllib3',
+-                'urllib3.packages', 'urllib3.packages.ssl_match_hostname',
++                'urllib3.packages',
+                 'urllib3.packages.backports', 'urllib3.contrib',
+                 'urllib3.util',
+                 ],
