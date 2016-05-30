@@ -18,6 +18,7 @@ env:
   - PACKAGE=dev-python/nessus
   - PACKAGE=dev-python/nexpose
   - PACKAGE=dev-python/nilsimsa
+  - PACKAGE=dev-python/nitpycker
   - PACKAGE=dev-python/pydocstyle
   - PACKAGE=dev-python/python-nmap
   - PACKAGE=dev-python/readthedocs-build
