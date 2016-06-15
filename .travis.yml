@@ -36,6 +36,7 @@ env:
   - PACKAGE=media-sound/picard
   - PACKAGE=net-analyzer/routersploit
   - PACKAGE=net-misc/osync
+  - PACKAGE=net-misc/youtube-dl_scripts
   - PACKAGE=net-p2p/freenet
   - PACKAGE=sci-electronics/logisim-bin
   - PACKAGE=sci-electronics/logisim-evolution
