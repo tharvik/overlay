@@ -21,12 +21,10 @@ IUSE="doc examples redis sqs test yaml zeromq"
 
 RDEPEND="
 	<dev-python/kombu-3.1[${PYTHON_USEDEP}]
-	>=dev-python/kombu-3.0.33[${PYTHON_USEDEP}]
-	>=dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
-	>=dev-python/billiard-3.3.0.22[${PYTHON_USEDEP}]
+	>=dev-python/kombu-3.0.34[${PYTHON_USEDEP}]
 	<dev-python/billiard-3.4[${PYTHON_USEDEP}]
+	>=dev-python/billiard-3.3.0.23[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/greenlet[${PYTHON_USEDEP}]
 "
 
 DEPEND="
