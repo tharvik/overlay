@@ -12,6 +12,7 @@ before_install:
 env:
   - PACKAGE=app-portage/gentools
   - PACKAGE=dev-python/burp
+  - PACKAGE=dev-python/celery
   - PACKAGE=dev-python/commonmark
   - PACKAGE=dev-python/elasticsearch-dsl
   - PACKAGE=dev-python/gnureadline
