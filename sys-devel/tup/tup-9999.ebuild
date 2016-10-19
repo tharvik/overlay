@@ -20,6 +20,7 @@ DEPEND='
 	sys-fs/fuse
 '
 RDEPEND="${DEPEND}"
+RESTRICT='userpriv'
 
 src_compile() {
 	addwrite '/dev/fuse'
