@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -15,16 +15,21 @@ EGIT_REPO_URI="https://github.com/python/${PN}.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=''
-IUSE="doc examples"
+IUSE="doc examples test"
 
 DEPEND="
-	dev-python/typeshed
 	doc? (
 		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
 	)
+	test? (
+		dev-python/typed_ast[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+	)
 "
-RDEPEND=""
+RDEPEND="
+	dev-python/typeshed
+"
 
 python_prepare_all() {
 	sed -i '/typeshed/d' setup.py || die 'unable to remove typeshed'
@@ -37,7 +42,7 @@ python_compile_all() {
 }
 
 python_test() {
-	"${PYTHON}" tests.py || die "tests failed under ${EPYTHON}"
+	"${PYTHON}" runtests.py -x lint || die "tests failed under ${PYTHON}"
 }
 
 python_install_all() {
