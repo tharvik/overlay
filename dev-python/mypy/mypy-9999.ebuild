@@ -42,6 +42,8 @@ python_compile_all() {
 }
 
 python_test() {
+	local PYTHONPATH="$(pwd)"
+
 	"${PYTHON}" runtests.py -x lint || die "tests failed under ${PYTHON}"
 }
 
