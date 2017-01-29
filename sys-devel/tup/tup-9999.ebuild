@@ -1,10 +1,10 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=5
 
-inherit git-2
+inherit git-2 linux-info
 
 DESCRIPTION='Tup is a file-based build system.'
 HOMEPAGE='http://gittup.org/tup/'
@@ -20,7 +20,10 @@ DEPEND='
 	sys-fs/fuse
 '
 RDEPEND="${DEPEND}"
-RESTRICT='userpriv'
+
+CONFIG_CHECK='
+	FUSE_FS
+'
 
 src_compile() {
 	addwrite '/dev/fuse'
