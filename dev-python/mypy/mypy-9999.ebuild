@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
-PYTHON_COMPAT=( python3_3 python3_4 )
+EAPI=6
+PYTHON_COMPAT=( python3_4 )
 
 inherit distutils-r1 vcs-snapshot git-r3
 
@@ -23,12 +23,13 @@ DEPEND="
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/typed_ast[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="
+	dev-python/typed_ast[${PYTHON_USEDEP}]
 	dev-python/typeshed
+	dev-python/typing[${PYTHON_USEDEP}]
 "
 
 python_prepare_all() {
