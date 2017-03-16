@@ -30,6 +30,7 @@ RDEPEND='
 	dev-java/commons-io:1
 	dev-java/commons-httpclient:3
 	dev-java/commons-lang:2.1
+	dev-java/commons-lang:3.3
 	dev-java/commons-logging:0
 	dev-java/fontbox:1.7
 	dev-java/groovy:0
