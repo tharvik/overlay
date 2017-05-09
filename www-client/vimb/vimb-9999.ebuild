@@ -4,39 +4,39 @@
 
 EAPI=5
 
-inherit toolchain-funcs eutils git-r3
+inherit toolchain-funcs eutils git-r3 flag-o-matic
 
 DESCRIPTION='a fast, lightweight, vim-like browser based on webkit'
 HOMEPAGE='http://fanglingsu.github.io/vimb/'
 SRC_URI=''
 EGIT_REPO_URI="https://github.com/fanglingsu/${PN}.git"
+EGIT_BRANCH='webkit2'
 
 LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS=''
-IUSE='gtk3'
+IUSE=''
 
 RDEPEND='
-	>=net-libs/libsoup-2.38:2.4
-	!gtk3? (
-		>=net-libs/webkit-gtk-1.5.0:2
-		x11-libs/gtk+:2
-	)
-	gtk3? (
-		>=net-libs/webkit-gtk-1.5.0:3
-		x11-libs/gtk+:3
-	)
+	>=net-libs/webkit-gtk-2.3.5:4
 '
 DEPEND="
 	${RDEPEND}
 	virtual/pkgconfig
 "
 
-src_compile() {
-	local myconf
-	use gtk3 && myconf+=' GTK=3'
+src_prepare() {
+	sed -i 's,\$(EXTPREFIX),$(DESTDIR)$(EXTPREFIX),' Makefile || \
+		die 'unable to fix install prefix'
 
-	emake CC="$(tc-getCC)" ${myconf}
+	sed -i 's,/lib/,/lib64/,' config.mk || \
+		die 'unable to fix lib install prefix'
+
+	default
+}
+
+src_compile() {
+	emake CC="$(tc-getCC)"
 }
 
 src_install() {
