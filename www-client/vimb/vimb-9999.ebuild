@@ -26,9 +26,6 @@ DEPEND="
 "
 
 src_prepare() {
-	sed -i 's,\$(EXTPREFIX),$(DESTDIR)$(EXTPREFIX),' Makefile || \
-		die 'unable to fix install prefix'
-
 	sed -i 's,/lib/,/lib64/,' config.mk || \
 		die 'unable to fix lib install prefix'
 
