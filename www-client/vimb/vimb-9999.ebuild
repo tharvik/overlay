@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit toolchain-funcs eutils git-r3 flag-o-matic
+inherit eutils git-r3 savedconfig toolchain-funcs
 
 DESCRIPTION='a fast, lightweight, vim-like browser based on webkit'
 HOMEPAGE='http://fanglingsu.github.io/vimb/'
@@ -14,10 +14,10 @@ EGIT_REPO_URI="https://github.com/fanglingsu/${PN}.git"
 LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS=''
-IUSE=''
+IUSE='savedconfig'
 
 RDEPEND='
-	>=net-libs/webkit-gtk-2.3.5:4
+	>=net-libs/webkit-gtk-2.8.0:4
 '
 DEPEND="
 	${RDEPEND}
@@ -28,6 +28,8 @@ src_prepare() {
 	sed -i 's,/lib/,/lib64/,' config.mk || \
 		die 'unable to fix lib install prefix'
 
+	use savedconfig && restore_config src/config.def.h
+
 	default
 }
 
@@ -37,4 +39,6 @@ src_compile() {
 
 src_install() {
 	emake PREFIX=/usr DESTDIR="${D}" install
+
+	use savedconfig && save_config src/config.def.h
 }
