@@ -17,7 +17,7 @@ KEYWORDS=''
 IUSE='suid'
 
 DEPEND='
-	sys-fs/fuse
+	sys-fs/fuse:0
 '
 RDEPEND="${DEPEND}"
 
@@ -28,6 +28,8 @@ CONFIG_CHECK='FUSE_FS'
 
 src_compile() {
 	addwrite '/dev/fuse'
+	addwrite '/proc'
+
 	./bootstrap.sh || die
 }
 
