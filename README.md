@@ -3,10 +3,8 @@ portage-overlay
 
 A mix of patch and adds to the main portage tree
 
-If you want to add this overlay copy tharvik.xml to /etc/layman/overlays/
-then add tharvik to layman.
+If you want to add this overlay, simply type
 ```
-cp tharvik.xml /etc/layman/overlays/
-layman -S
-layman -a tharvik
+layman -o https://raw.githubusercontent.com/tharvik/overlay/master/tharvik.xml -a tharvik
+
 ```
