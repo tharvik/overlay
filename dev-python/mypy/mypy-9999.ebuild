@@ -19,11 +19,12 @@ IUSE='doc test'
 DEPEND="
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep 'dev-python/lxml[${PYTHON_USEDEP}]' 'python3_[5,6]' )
-		>=dev-python/pytest-3.0
-		>=dev-python/pytest-xdist-1.18
-		>=dev-python/pytest-cov-2.4.0
-		>=dev-python/typed_ast-1.1.0
+		dev-python/lxml[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-1.18[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.4.0[${PYTHON_USEDEP}]
+		>=dev-python/typed_ast-1.1.0[${PYTHON_USEDEP}]
 	)
 	doc? (
 		>=dev-python/sphinx-1.4.4[${PYTHON_USEDEP}]
