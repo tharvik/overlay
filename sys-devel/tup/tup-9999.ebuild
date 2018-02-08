@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -13,7 +13,7 @@ EGIT_REPO_URI='https://github.com/gittup/tup.git'
 LICENSE='GPL-2'
 SLOT=0
 KEYWORDS=''
-IUSE='suid'
+IUSE='suid test'
 
 DEPEND='
 	sys-fs/fuse:0
@@ -24,6 +24,16 @@ DOCS='README.md'
 HTML_DOCS='docs'
 
 CONFIG_CHECK='FUSE_FS'
+
+src_prepare() {
+	if use test && [ $PACKAGE_MANAGER = 'paludis' ]
+	then
+		rm 'test/t4047-open-fds.sh' || \
+			die 'unable to remove paludis unfriendly test'
+	fi
+
+	default
+}
 
 src_compile() {
 	addwrite '/dev/fuse'
