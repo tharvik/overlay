@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,11 +20,9 @@ DEPEND="
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/lxml[${PYTHON_USEDEP}]
-		dev-python/psutil[${PYTHON_USEDEP}]
 		>=dev-python/pytest-3.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-1.18[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-2.4.0[${PYTHON_USEDEP}]
-		>=dev-python/typed_ast-1.1.0[${PYTHON_USEDEP}]
 	)
 	doc? (
 		>=dev-python/sphinx-1.4.4[${PYTHON_USEDEP}]
@@ -32,6 +30,8 @@ DEPEND="
 	)
 "
 RDEPEND="
+	>=dev-python/typed-ast-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/psutil-5.4.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/typing[${PYTHON_USEDEP}]' 'python3_4')
 "
 
