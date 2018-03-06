@@ -16,9 +16,13 @@ KEYWORDS=''
 IUSE='suid test'
 
 DEPEND='
+	test? (
+		sys-fs/fuse:0
+	)
+'
+RDEPEND='
 	sys-fs/fuse:0
 '
-RDEPEND="${DEPEND}"
 
 DOCS='README.md'
 HTML_DOCS='docs'
@@ -26,7 +30,7 @@ HTML_DOCS='docs'
 CONFIG_CHECK='FUSE_FS'
 
 src_prepare() {
-	if use test && [ $PACKAGE_MANAGER = 'paludis' ]
+	if use test && [ "$PACKAGE_MANAGER" = 'paludis' ]
 	then
 		rm 'test/t4047-open-fds.sh' || \
 			die 'unable to remove paludis unfriendly test'
@@ -36,14 +40,14 @@ src_prepare() {
 }
 
 src_compile() {
-	addwrite '/dev/fuse'
-	addwrite '/proc'
-
-	./bootstrap.sh || die
+	./bootstrap-nofuse.sh || die
 }
 
 src_test() {
-	cd "${S}/test"
+	addwrite /proc
+	addwrite /dev/fuse
+
+	cd test || die 'upstream moved test directory'
 	./test.sh || die
 }
 
