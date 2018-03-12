@@ -29,6 +29,9 @@ HTML_DOCS='docs'
 
 CONFIG_CHECK='FUSE_FS'
 
+# can only be run as root or without sandbox
+RESTRICT='test'
+
 src_prepare() {
 	if use test && [ "$PACKAGE_MANAGER" = 'paludis' ]
 	then
