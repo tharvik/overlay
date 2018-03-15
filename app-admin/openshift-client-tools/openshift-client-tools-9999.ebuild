@@ -42,4 +42,10 @@ src_install() {
 	dobin "_output/local/bin/linux/${MY_ARCH}/oc"
 	doman docs/man/man1/oc*
 	use bash-completion && dobashcomp contrib/completions/bash/oc
+
+	if use zsh-completion
+	then
+		insinto /usr/share/zsh/site-functions
+		newins contrib/completions/zsh/oc _oc
+	fi
 }
