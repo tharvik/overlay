@@ -20,6 +20,7 @@ DEPEND="
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/lxml[${PYTHON_USEDEP}]
+		>=dev-python/flaky-3.4.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-3.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-1.18[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-2.4.0[${PYTHON_USEDEP}]
