@@ -19,6 +19,16 @@ DEPEND="dev-lang/go
 	kerberos? ( app-crypt/mit-krb5 )"
 RDEPEND="bash-completion? ( >=app-shells/bash-completion-2.3-r1 )"
 
+src_prepare() {
+		default
+
+		if use zsh-completion
+		then
+			sed -i '1a #compdef oc' contrib/completions/zsh/oc || \
+				die 'unable to fix zsh completion'
+		fi
+}
+
 src_compile() {
 	use kerberos && MY_TAGS="-tags=gssapi"
 
