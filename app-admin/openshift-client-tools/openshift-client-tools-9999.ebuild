@@ -35,6 +35,7 @@ src_compile() {
 	local commit="$(git rev-parse HEAD)"
 	export OS_GIT_COMMIT="$version" OS_GIT_VERSION="$version"
 	export KUBE_GIT_COMMIT KUBE_GIT_VERSION
+	export TRAVIS=true
 
 	emake all WHAT="cmd/oc ${MY_TAGS} -v"
 
