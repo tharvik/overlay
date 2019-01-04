@@ -1,0 +1,10 @@
+#!/bin/sh -eux
+
+image=tharvik/gentoo-$(echo "$PACKAGE" | cut -d / -f 2)-o:latest
+if ! docker pull "$image"
+then
+	image=tharvik/gentoo-git:latest
+fi
+
+docker run --volume $PWD:/overlay:ro --env 'PORTDIR_OVERLAY=/overlay' \
+	--workdir /overlay "$image" ./test-pkg "$PACKAGE"

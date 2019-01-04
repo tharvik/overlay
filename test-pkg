@@ -1,0 +1,8 @@
+#!/bin/sh -eux
+
+readonly PACKAGE=$1
+
+cd "$PACKAGE"
+
+emerge-accept --onlydeps "$PACKAGE"
+emerge-accept --verbose --jobs=1 "$PACKAGE"

@@ -4,37 +4,60 @@ services:
   - docker
 
 before_install:
-  - ./check.sh
-  # we do need to build it again as travis and docker build start at the same
-  # time thus it won't really be the latest
-  - docker build -t tharvik/overlay:latest .
+  - ./check
 
 env:
+  - PACKAGE=app-admin/openshift-client-tools
+  - PACKAGE=app-office/vaudtax
   - PACKAGE=app-portage/gentools
+  - PACKAGE=app-text/gpresent
+  - PACKAGE=app-vim/vundlevim
+  - PACKAGE=dev-lang/wasm
+  - PACKAGE=dev-python/aiofiles
+  - PACKAGE=dev-python/async-generator
+  - PACKAGE=dev-python/async-unittest
   - PACKAGE=dev-python/billiard
   - PACKAGE=dev-python/burp
   - PACKAGE=dev-python/celery
   - PACKAGE=dev-python/cliff
   - PACKAGE=dev-python/commonmark
   - PACKAGE=dev-python/elasticsearch-dsl
+  - PACKAGE=dev-python/grafana-api
+  - PACKAGE=dev-python/grafanalib
   - PACKAGE=dev-python/gnureadline
+  - PACKAGE=dev-python/h11
+  - PACKAGE=dev-python/h2
   - PACKAGE=dev-python/mypy
   - PACKAGE=dev-python/nessus
   - PACKAGE=dev-python/nexpose
   - PACKAGE=dev-python/nilsimsa
   - PACKAGE=dev-python/nitpycker
+  - PACKAGE=dev-python/pika
+  - PACKAGE=dev-python/pyckup
   - PACKAGE=dev-python/pydocstyle
+  - PACKAGE=dev-python/python-ldap
   - PACKAGE=dev-python/python-nmap
+  - PACKAGE=dev-python/pytest-asyncio
+  - PACKAGE=dev-python/pytest-cov
+  - PACKAGE=dev-python/pytumblr
+  - PACKAGE=dev-python/quart
   - PACKAGE=dev-python/readthedocs-build
   - PACKAGE=dev-python/readthedocs-sphinx-ext
   - PACKAGE=dev-python/recommonmark
+  - PACKAGE=dev-python/sphinxcontrib-trio
   - PACKAGE=dev-python/toml
   - PACKAGE=dev-python/typeshed
+  - PACKAGE=dev-python/typing
+  - PACKAGE=dev-python/units
   - PACKAGE=dev-python/urllib3
+  - PACKAGE=dev-python/vincent
   - PACKAGE=dev-python/w3af-api-client
+  - PACKAGE=dev-python/wordcloud
+  - PACKAGE=dev-python/wsproto
   - PACKAGE=dev-util/kconfig
   - PACKAGE=dev-util/stdman
   - PACKAGE=media-gfx/mcomix
+  - PACKAGE=media-libs/glee
   - PACKAGE=media-libs/libbpg
   - PACKAGE=media-sound/picard
   - PACKAGE=net-analyzer/routersploit
@@ -44,7 +67,10 @@ env:
   - PACKAGE=sci-electronics/logisim-bin
   - PACKAGE=sci-electronics/logisim-evolution
   - PACKAGE=sys-devel/tup
+  - PACKAGE=www-client/vimb
   - PACKAGE=x11-libs/gdk-pixbuf
+  - PACKAGE=x11-misc/electricsheep
+  - PACKAGE=x11-misc/flam3
 
 script:
   - docker run tharvik/overlay:latest /overlay/test.sh "${PACKAGE}"

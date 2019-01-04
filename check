@@ -1,0 +1,8 @@
+#!/bin/sh -eux
+
+find * -maxdepth 1 -type d | grep / | while read l
+do
+	grep -qF "PACKAGE=${l}" .travis.yml
+done
+
+docker run --volume $PWD:/overlay:ro --workdir /overlay tharvik/gentoo-repoman:latest repoman full
