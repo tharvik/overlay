@@ -1,33 +1,35 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="kconfig, which supports the pushd/popd directives"
 HOMEPAGE="http://gittup.org/gittup/"
 SRC_URI=""
-EGIT_REPO_URI="git://gittup.org/kconfig.git"
+EGIT_REPO_URI="https://github.com/gittup/kconfig.git"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="sys-devel/tup"
+DEPEND="dev-util/tup"
 RDEPEND=""
 
 src_prepare()
 {
-	tup init
+	default
+
+	tup init || die 'unable to init'
 }
 
 src_compile()
 {
 	addwrite "${ROOT}/dev/fuse"
-	tup
+	addwrite /proc
+	tup || die 'unable to build'
 }
 
 src_install()
