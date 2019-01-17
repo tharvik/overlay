@@ -3,9 +3,6 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - ./check
-
 env:
   - PACKAGE=app-admin/openshift-client-tools
   - PACKAGE=app-office/vaudtax
@@ -61,6 +58,7 @@ env:
   - PACKAGE=media-libs/libbpg
   - PACKAGE=media-sound/picard
   - PACKAGE=net-analyzer/routersploit
+  - PACKAGE=net-misc/dl
   - PACKAGE=net-misc/osync
   - PACKAGE=net-misc/youtube-dl_scripts
   - PACKAGE=net-p2p/freenet
@@ -72,5 +70,8 @@ env:
   - PACKAGE=x11-misc/electricsheep
   - PACKAGE=x11-misc/flam3
 
+before_install:
+  - ./check
+
 script:
-  - docker run tharvik/overlay:latest /overlay/test.sh "${PACKAGE}"
+  - docker run --env "PACKAGE=$PACKAGE" tharvik/overlay:latest /overlay/test
