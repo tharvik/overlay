@@ -4,11 +4,11 @@
 	<repo quality="experimental" status="unofficial">
 		<name>tharvik</name>
 		<description>Local patchs</description>
-		<homepage>https://github.com/tharvik/portage-overlay</homepage>
+		<homepage>https://github.com/tharvik/overlay</homepage>
 		<owner type="project">
 			<email>tharvik@gmail.com</email>
 			<name>tharvik</name>
 		</owner>
-		<source type="git">https://github.com/tharvik/portage-overlay.git</source>
+		<source type="git">https://github.com/tharvik/overlay.git</source>
 	</repo>
 </repositories>
