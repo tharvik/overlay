@@ -1,10 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit eutils git-r3 savedconfig toolchain-funcs multilib
+inherit git-r3 savedconfig toolchain-funcs
 
 DESCRIPTION='a fast, lightweight, vim-like browser based on webkit'
 HOMEPAGE='http://fanglingsu.github.io/vimb/'
@@ -17,7 +16,7 @@ KEYWORDS=''
 IUSE='savedconfig'
 
 RDEPEND='
-	>=net-libs/webkit-gtk-2.8.0:4
+	>=net-libs/webkit-gtk-2.20.0:4
 '
 DEPEND="
 	${RDEPEND}
