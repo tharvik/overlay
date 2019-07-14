@@ -3,48 +3,36 @@
 
 EAPI=7
 
-inherit git-r3
+inherit golang-build golang-vcs
 
 DESCRIPTION='DownLoader, very customisable file fetcher'
 HOMEPAGE='https://github.com/tharvik/dl'
-SRC_URI=''
 
-EGIT_REPO_URI='https://github.com/tharvik/dl.git'
+EGO_PN='github.com/tharvik/dl'
 
 LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS=''
-IUSE='debug test'
+IUSE='test'
 
-DEPEND='
-	dev-haskell/acid-state
-	dev-haskell/flock
-	dev-haskell/hinotify
-'
-RDEPEND="${DEPEND}"
 BDEPEND='
-	dev-util/tup
-	test? ( sys-process/time )
+	test? (
+		app-shells/bash:0
+		sys-process/time
+	)
 '
 
-get_variant() {
-	usex debug debug release
-}
-
-src_compile() {
-	addwrite /proc:/dev/fuse
-
-	tup variant variant/$(get_variant) ||
-		die 'unable to select variant'
-	tup build-$(get_variant)/src ||
-		die 'unable to build variant: $variant'
+src_unpack() {
+	for pn in github.com/tharvik/flock $EGO_PN
+	do
+		EGO_PN=$pn golang-vcs_src_unpack
+	done
 }
 
 src_test() {
-	tup build-$(get_variant)/test
+	PATH+=":$S" golang-build_src_test
 }
 
 src_install() {
-	dobin build-$(get_variant)/src/dl
-	dobin dl-gen-*
+	dobin dl src/github.com/tharvik/dl/dl-*
 }
