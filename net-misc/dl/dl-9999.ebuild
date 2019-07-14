@@ -30,7 +30,7 @@ src_unpack() {
 }
 
 src_test() {
-	PATH+=":$S" golang-build_src_test
+	PATH="$S:$S/src/github/tharvik/dl:$PATH" golang-build_src_test
 }
 
 src_install() {
