@@ -16,6 +16,7 @@ KEYWORDS=''
 IUSE='savedconfig'
 
 RDEPEND='
+	x11-libs/gtk+:3
 	>=net-libs/webkit-gtk-2.20.0:4
 '
 DEPEND="
