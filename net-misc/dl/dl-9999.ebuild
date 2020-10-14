@@ -1,14 +1,14 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2019-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit golang-build golang-vcs
+inherit go-module git-r3
 
 DESCRIPTION='DownLoader, very customisable file fetcher'
 HOMEPAGE='https://github.com/tharvik/dl'
 
-EGO_PN='github.com/tharvik/dl'
+EGIT_REPO_URI='https://github.com/tharvik/dl'
 
 LICENSE='GPL-3'
 SLOT='0'
@@ -23,16 +23,21 @@ BDEPEND='
 '
 
 src_unpack() {
-	for pn in github.com/tharvik/flock $EGO_PN
-	do
-		EGO_PN=$pn golang-vcs_src_unpack
-	done
+	git-r3_src_unpack
+
+	go-module_live_vendor
+}
+
+src_compile() {
+	go build ./cmd/dl ||
+		die 'fail to build cmd/dl'
 }
 
 src_test() {
-	PATH="$S:$S/src/github/tharvik/dl:$PATH" golang-build_src_test
+	PATH=$PWD:$PATH go test -short ./... ||
+		die 'fail to run tests'
 }
 
 src_install() {
-	dobin dl src/github.com/tharvik/dl/dl-*
+	dobin dl dl-*
 }
