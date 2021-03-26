@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION='Formatted C++11/14 stdlib man pages (cppreference)'
 HOMEPAGE='https://github.com/jeaye/stdman'
@@ -18,3 +18,10 @@ IUSE=''
 
 DEPEND=''
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+
+	sed -i '/gzip/d' do_install ||
+		die 'unable to remove compression'
+}
