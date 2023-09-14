@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit git-r3
+inherit dune git-r3
 
 DESCRIPTION='WebAssembly reference interpreter'
 HOMEPAGE='http://webassembly.github.io/'
@@ -13,23 +13,19 @@ EGIT_REPO_URI='https://github.com/WebAssembly/spec.git'
 LICENSE='Apache-2.0'
 SLOT='0'
 KEYWORDS=''
-IUSE='debug test'
+IUSE='ocamlopt test'
 RESTRICT='!test? ( test )'
 
 DEPEND=''
+BDEPEND='
+	dev-ml/dune
+'
 RDEPEND=''
 
 S="${S}/interpreter"
 
-src_compile() {
-	emake "$(usex debug un '')opt"
-}
-
 src_test() {
-	emake "$(usex debug debug '')test"
-}
-
-src_install() {
-	newbin "${PN}$(usex debug .debug '')" "${PN}"
-	einstalldocs
+	# `test` is not concurrent friendly, see #1679
+	emake unittest
+	emake wasm
 }
