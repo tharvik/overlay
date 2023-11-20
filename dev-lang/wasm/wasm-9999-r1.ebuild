@@ -16,11 +16,13 @@ KEYWORDS=''
 IUSE='ocamlopt test'
 RESTRICT='!test? ( test )'
 
-DEPEND=''
+DEPEND='
+	dev-ml/menhir
+'
 BDEPEND='
 	dev-ml/dune
 '
-RDEPEND=''
+RDEPEND="${DEPEND}"
 
 S="${S}/interpreter"
 
