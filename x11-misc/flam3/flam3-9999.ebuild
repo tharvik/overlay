@@ -1,25 +1,23 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 inherit git-r3 autotools
 
 DESCRIPTION='The original fractal flame renderer and genetic language'
 HOMEPAGE='http://flam3.com/'
-SRC_URI=''
 EGIT_REPO_URI="https://github.com/scottdraves/${PN}.git"
 
 LICENSE='GPL-3'
 SLOT='0'
 KEYWORDS=''
-IUSE=''
 
 DEPEND='
 	dev-libs/libxml2:2
+	media-libs/libjpeg-turbo:0
 	media-libs/libpng:0
-	sys-libs/zlib
-	virtual/jpeg:0
+	sys-libs/zlib:0
 '
 RDEPEND="${DEPEND}"
 
